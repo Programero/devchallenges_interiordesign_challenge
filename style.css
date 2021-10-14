@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #181719;
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: #ffffff;
+
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+button {
+  color: #ffffff;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.25rem 0px;
+  border-bottom: 2px solid #181719;
+  font-weight: 500;
+  font-size: 1.125rem;
+  /* width: auto; */
+  /* box-sizing: content-box; */
+}
+
+a:hover {
+  /* font-weight: 700; */
+  border-bottom: 2px solid #ffffff;
+}
+
+.logo {
+  text-transform: uppercase;
+  border: 1px solid #ffffff;
+  background: #181719;
+
+  font-family: "Crimson Pro", serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 16px;
+
+  padding: 7px 9px;
+}
+
+.menu {
+  padding: 20px 0px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #181719;
+}
+
+#menu-open {
+  color: #f2f2f2;
+  font-size: 2rem;
+  z-index: 3;
+  cursor: pointer;
+  display: block;
+}
+
+.container {
+  width: 90vw;
+  margin: auto;
+}
+
+.menu .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#menu-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(24, 23, 25, 1);
+  z-index: 2;
+  transform: translateX(100vw);
+  transition: all 0.5s ease;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#menu-items > a {
+  text-transform: capitalize;
+  margin-bottom: 32px;
+}
+
+#menu-items.show-menu-items {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (min-width: 760px) {
+  #menu-open {
+    display: none;
+  }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  #menu-items {
+    position: static;
+    background: rgba(24, 23, 25, 1);
+
+    transform: translateX(0);
+    transition: all 0.5s ease;
+    opacity: 1;
+    height: 100%;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  #menu-items > a:not(:last-child) {
+    margin-right: 6vw;
+  }
+
+  #menu-items > a {
+    margin-bottom: 0px;
+    flex-grow: 1;
+  }
+}
+
+.overview {
+  display: grid;
+  grid-gap: 0;
+  overflow: scroll;
+}
+
+.overview::-webkit-scrollbar {
+  display: none;
+}
+.content > h1 {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: 46px;
+
+  margin-bottom: 25px;
+}
+
+.content > p {
+  font-family: Montserrat;
+
+  font-size: 0.875rem;
+  line-height: 17px;
+
+  max-width: 60vw;
+  margin-bottom: 25px;
+}
+
+#read-more {
+  display: inline-block;
+}
+#read-more a {
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.content i {
+  margin-left: 0.5rem;
+}
+
+.overview {
+  padding: 4vh 0 12vh 0;
+}
+
+.display-img {
+  position: relative;
+  z-index: -1;
+}
+
+.designer-info {
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  padding: 1rem;
+  background: #181719;
+}
+
+#designer-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#designer-top img {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+#actual-info {
+  padding: 0px 1rem;
+}
+
+#actual-info p:first-child {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 17px;
+}
+
+#actual-info p:last-child {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(130, 130, 130, 1);
+}
+
+.designer-info > p {
+  font-family: Lora;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+@media (min-width: 760px) {
+  .overview {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10vw;
+    align-items: center;
+  }
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #181719;
+  width: 100vw;
+}
+.footer > p {
+  padding: 0.75rem;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #a9a9a9;
+}
