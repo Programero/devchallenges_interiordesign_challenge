@@ -90,12 +90,13 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   background: rgba(24, 23, 25, 1);
   z-index: 2;
   transform: translateX(100vw);
-  transition: all 0.5s ease;
+  width: 0;
+  transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -109,6 +110,7 @@ a:hover {
 
 #menu-items.show-menu-items {
   transform: translateX(0);
+  width: 100%;
   opacity: 1;
 }
 
